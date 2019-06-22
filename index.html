@@ -10,7 +10,7 @@
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
-        <!-- <h3 class="masthead-brand">Cover</h3> -->
+        <h3 class="masthead-brand">LDC Countdowns</h3>
         <!-- <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link active" href="#">Home</a>
           <a class="nav-link" href="#">Features</a>
@@ -20,15 +20,18 @@
     </header>
 
     <main role="main" class="inner cover">
-      <h1 class="cover-heading">Countdowns</h1>
       <div id="countdown">
-        <span class="countdownlabel">Upgrade:</span>
-        <div id="upgradecountdown"></div>
-        
-        <span class="countdownlabel">Retirement: </span>
-        <div id="retirementcountdown"></div>
+        <h2 class="cover-heading">Days Left of Upgrades</h2>
+        <!-- <span class="countdownlabel">Upgrade:</span> -->
+        <div id="upgradecountdown" style="display: none;"></div>
+        <input id="upgradeflapper" class="XXL"/>    
 
-        <span class="countdownlabel">Days Left:</span>
+
+        <h2 class="cover-heading">Days Left until Retirement</h2>
+
+        <!-- <span class="countdownlabel">Retirement: </span> -->
+        <div id="retirementcountdown" style="display: none;"></div>
+        <!-- <span class="countdownlabel">Days Left:</span> -->
         <input id="retirementflapper" class="XXL"/>    
         
       
@@ -57,10 +60,12 @@
       <script src="bower_components/flapper/src/jquery.flapper.js"></script>
 
       <script type="text/javascript">
+        var udaysleft = 0;
         var rdaysleft = 0;
 
         $('#upgradecountdown').countdown('2019/11/14', function(event) {
           $(this).html(event.strftime('%D days (%w weeks)'));
+          udaysleft = event.strftime('%D');
         });
 
          $('#retirementcountdown').countdown('2020/03/31', function(event) {
@@ -75,6 +80,7 @@
           width: 3,
           min_timing: 100
         };
+        $('#upgradeflapper').flapper(flapperoptions).val(udaysleft).change();
         $('#retirementflapper').flapper(flapperoptions).val(rdaysleft).change();
 
       </script>
