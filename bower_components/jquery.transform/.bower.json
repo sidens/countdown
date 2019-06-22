@@ -1,0 +1,27 @@
+{
+  "name": "jquery.transform",
+  "version": "1.0.0",
+  "description": "A jQuery plugin which provides an easy way for users to perform cross-browser XML transformations with XSL templates.",
+  "main": [
+    "src/jquery.transform.js"
+  ],
+  "ignore": [],
+  "homepage": "https://github.com/purtuga/jquery.transform",
+  "authors": [
+    "Paul Tavares"
+  ],
+  "license": [
+    "GPL",
+    "MIT"
+  ],
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "1833d41561fed29c0b2c1df3a6a4090fcced501e"
+  },
+  "_source": "https://github.com/purtuga/jquery.transform.git",
+  "_target": "^1.0.0",
+  "_originalSource": "jquery.transform",
+  "_direct": true
+}
