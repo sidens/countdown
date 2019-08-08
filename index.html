@@ -26,7 +26,7 @@
         <h2 class="cover-heading">Days Left of Upgrades</h2>
         <!-- <span class="countdownlabel">Upgrade:</span> -->
         <div id="upgradecountdown" style="display: none;"></div>
-        <input id="upgradeflapper" class="L"/>    
+        <input id="upgradeflapper" class="XL"/>    
       </div>
 <!--       <div class="countdown">
         <h2 class="cover-heading">Days Left until Retirement</h2>
@@ -60,9 +60,9 @@
         var udaysleft = 0;
         var rdaysleft = 0;
 
-        $('#upgradecountdown').countdown('2019/11/12 22:00:00', function(event) {
-          $(this).html(event.strftime('%D %H:%M:%S'));
-          udaysleft = event.strftime('%D %H:%M:%S');
+        $('#upgradecountdown').countdown('2019/11/13', function(event) {
+          $(this).html(event.strftime('%D'));
+          udaysleft = event.strftime('%D');
         });
 
          $('#retirementcountdown').countdown('2020/03/31', function(event) {
@@ -74,7 +74,7 @@
         //Adding flapper board
         var flapperoptions = {
           chars_preset: 'num',
-          width: 11,
+          width: 3,
           min_timing: 100
         };
         $('#upgradeflapper').flapper(flapperoptions).val(udaysleft).change();
