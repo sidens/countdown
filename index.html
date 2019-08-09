@@ -12,7 +12,7 @@
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
-        <h3 class="masthead-brand">OnePlatform Countdown</h3>
+        <!-- <h3 class="masthead-brand">OnePlatform Countdown</h3> -->
         <!-- <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link active" href="#">Home</a>
           <a class="nav-link" href="#">Features</a>
@@ -23,10 +23,16 @@
 
     <main role="main" class="inner cover">
       <div class="countdown">
-        <h2 class="cover-heading">Days Left of Upgrades</h2>
+        <h2 class="cover-heading">Countdown to OnePlatform</h2>
         <!-- <span class="countdownlabel">Upgrade:</span> -->
         <div id="upgradecountdown" style="display: none;"></div>
-        <input id="upgradeflapper" class="L"/>    
+        <input id="upgradeflapper" class="M"/>    
+        <div class="timing">
+          <span id="days">Days</span>
+          <span id="hrs">Hours</span>
+          <span id="mins">Minutes</span>
+          <span id="secs">Seconds</span>
+        </div>
       </div>
 <!--       <div class="countdown">
         <h2 class="cover-heading">Days Left until Retirement</h2>
@@ -57,28 +63,30 @@
       <script src="bower_components/flapper/src/jquery.flapper.js"></script>
 
       <script type="text/javascript">
-        var udaysleft = 0;
-        var rdaysleft = 0;
-
-        $('#upgradecountdown').countdown('2019/11/12 22:00:00', function(event) {
-          $(this).html(event.strftime('%D %H:%M:%S'));
-          udaysleft = event.strftime('%D %H:%M:%S');
-        });
-
-         $('#retirementcountdown').countdown('2020/03/31', function(event) {
-          $(this).html(event.strftime('%D days (%w weeks)'));
-          rdaysleft = event.strftime('%D');
-
-        });
-
-        //Adding flapper board
+        //Flapper options
         var flapperoptions = {
           chars_preset: 'num',
           width: 11,
-          min_timing: 100
+          // min_timing: 10
         };
-        $('#upgradeflapper').flapper(flapperoptions).val(udaysleft).change();
-        $('#retirementflapper').flapper(flapperoptions).val(rdaysleft).change();
+
+        //Control variable that gets updated by countdown function
+        var udaysleft = 0;
+
+        //Initiatlize the flapper board
+        $('#upgradeflapper').flapper(flapperoptions);
+
+        //Begin countdown function
+        $('#upgradecountdown').countdown('2019/11/12 22:00:00', function(event) {  
+          // $('#upgradeflapper').html(event.strftime('%D %H:%M:%S'));
+          udaysleft = event.strftime('%D %H:%M:%S');
+          $("#upgradeflapper").val(udaysleft).change();
+          // console.log ("This:" + JSON.stringify(this));       
+          
+          // console.log ("Time remaining:" + udaysleft);       
+        });
+
+
 
       </script>
     
