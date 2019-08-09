@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>OnePlatform Countdown</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="cover.css">
+  <link rel="stylesheet" href="bower_components/flapper/css/flapper.css">
+
+</head>
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <!-- <h3 class="masthead-brand">OnePlatform Countdown</h3> -->
+        <!-- <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Contact</a>
+        </nav> -->
+      </div>
+    </header>
+
+    <main role="main" class="inner cover">
+      <div class="countdown">
+        <h2 class="cover-heading">Countdown to OnePlatform</h2>
+        <!-- <span class="countdownlabel">Upgrade:</span> -->
+        <div id="upgradecountdown" style="display: none;"></div>
+
+        <input id="upgradeflapper" class="S"/>    
+        <div class="timing">
+          <span id="days">Days</span>
+          <span id="hrs">Hours</span>
+          <span id="mins">Minutes</span>
+          <span id="secs">Seconds</span>
+        </div>
+
+      </div>
+<!--       <div class="countdown">
+        <h2 class="cover-heading">Days Left until Retirement</h2>
+        <div id="retirementcountdown" style="display: none;"></div>
+        <input id="retirementflapper" class="XL"/>           
+      </div> -->
+      
+      <!-- <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+      </p> -->
+    </main>
+
+
+    <footer class="mastfoot mt-auto">
+      <!-- <div class="inner">
+        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      </div> -->
+
+      <!-- Core Scripts -->
+      <script src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <!-- Countdown Script -->
+      <script src="bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
+      
+      <!-- Flapper Scripts -->
+      <!-- <script src="bower_components/jquery.transform/src/jquery.transform.js"></script> -->
+      <script src="jquery.transform-0.9.3.min.js"></script>
+      <script src="bower_components/flapper/src/jquery.flapper.js"></script>
+
+      <script type="text/javascript">
+        //Flapper options
+        var flapperoptions = {
+          chars_preset: 'num',
+          width: 11,
+          transform: false
+          // min_timing: 10
+        };
+
+        //Control variable that gets updated by countdown function
+        var udaysleft = 0;
+
+        //Initiatlize the flapper board
+        $('#upgradeflapper').flapper(flapperoptions);
+
+        //Begin countdown function
+        $('#upgradecountdown').countdown('2019/11/12 22:00:00', function(event) {  
+          // $('#upgradeflapper').html(event.strftime('%D %H:%M:%S'));
+          udaysleft = event.strftime('%D %H:%M:%S');
+          $("#upgradeflapper").val(udaysleft).change();
+          // console.log ("This:" + JSON.stringify(this));       
+          
+          // console.log ("Time remaining:" + udaysleft);       
+        });
+
+      </script>
+    
+    </footer>
+  </div>
+</body>
+</html>
