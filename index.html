@@ -67,9 +67,10 @@
       <script type="text/javascript">
         //Flapper options
         var flapperoptions = {
-          chars_preset: 'num',
-          width: 11,
-          // min_timing: 10
+          width: 11,            // number of digits
+          chars_preset: 'num',  // 'num', 'hexnum', 'alpha' or 'alphanum'
+          // min_timing: 10,       // the minimum timing for digit animati
+          timing: 100          // the maximum timing for digit animation
         };
 
         //Control variable that gets updated by countdown function
@@ -78,8 +79,8 @@
         //Initiatlize the flapper board
         $('#upgradeflapper').flapper(flapperoptions);
 
-        //Begin countdown function
-        $('#upgradecountdown').countdown('2019/11/12 22:00:00', function(event) {  
+        //Begin countdown function - time is 8p ET (5p PT)
+        $('#upgradecountdown').countdown('2019/11/12 20:00:00', function(event) {  
           // $('#upgradeflapper').html(event.strftime('%D %H:%M:%S'));
           udaysleft = event.strftime('%D %H:%M:%S');
           $("#upgradeflapper").val(udaysleft).change();
